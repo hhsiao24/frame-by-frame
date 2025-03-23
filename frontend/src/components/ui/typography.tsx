@@ -1,4 +1,4 @@
-type Props = { children: string; className: string; }
+type Props = { children: React.ReactNode; className?: string; }
 
 export const H1 = ({ children, className }: Props) => {
   return (
@@ -8,7 +8,7 @@ export const H1 = ({ children, className }: Props) => {
 
 export const H2 = ({ children, className }: Props) => {
   return (
-    <h1 className={`font-title text-lg ${className}`}>{children}</h1>
+    <h1 className={`font-title text-4xl ${className}`}>{children}</h1>
   );
 };
 
