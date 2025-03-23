@@ -1,0 +1,53 @@
+services:
+  flask-backend:
+    image: flask-backend
+    build: ./backend/
+    ports:
+      - '5001:5000'
+      - '9229:9229'
+    networks:
+      - web-app
+    # depends_on:
+    #   - postgres
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/venv
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/mydatabase
+    extra_hosts:
+      - 'localhost:host-gateway'
+
+  react-frontend:
+    image: react-frontend
+    build: ./frontend/
+    stdin_open: true
+    ports:
+      - '5173:5173'
+    networks:
+      - web-app
+    depends_on:
+      - flask-backend
+    volumes:
+      - ./frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+
+  # postgres:
+  #   image: postgres:15
+  #   restart: always
+  #   ports:
+  #     - '5432:5432'
+  #   networks:
+  #     - web-app
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_DB: mydatabase
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+
+networks:
+  web-app:
+    driver: bridge
+
+volumes:
+  postgres-data:
