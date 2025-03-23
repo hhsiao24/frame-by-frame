@@ -35,7 +35,7 @@ export const Picture = () => {
         <Link to="/profile">
           <Button variant="ghost"><IconArrowLeft />Back</Button>
         </Link>
-        <div className="flex flex-col items-start p-8 gap-4 bg-neutral-50 rounded-xl">
+        <div className="flex flex-col items-start p-8 gap-4 bg-neutral-50 rounded-xl drop-shadow-xl">
           <H3 className="font-bold">How Does This Work?</H3>
           {stages.map(({ name }, index) => (
             <Grid item container key={index} className="flex items-center gap-4">

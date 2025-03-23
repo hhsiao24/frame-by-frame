@@ -3,15 +3,22 @@ import { Button } from '@/components/ui/button.tsx';
 import { IconBrandGoogleFilled, IconArrowLeft } from '@tabler/icons-react';
 import { Link, useNavigate } from 'react-router';
 import { useGoogleLogin } from '@react-oauth/google';
+import { useEffect } from 'react';
 
 export const Login = () => {
   const nav = useNavigate();
   const login = useGoogleLogin({
     onSuccess: tokenResponse => {
-      console.log(tokenResponse);
+      localStorage.setItem("userToken", tokenResponse.access_token);
       nav('/profile');
     },
   });
+
+  useEffect(() => {
+    if (localStorage.getItem("userToken")) {
+      nav('/profile');
+    }
+  }, []);
 
   return (
     <div className="flex flex-row gap-4 items-center bg-stone-100 w-screen min-h-screen justify-center">
