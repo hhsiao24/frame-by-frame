@@ -14,7 +14,7 @@ export const Home = () => {
                 the
                 perfect way to add a burst of joy ✨ to any occasion — because every moment deserves its frame! 💖
             </P>
-            <Link to='/Login'><Button>Get Started!</Button></Link>
+            <Link to='/login'><Button>Get Started!</Button></Link>
             <img src="/cat-camera.png" alt="Cat in camera" className="max-w-sm w-11/12 pt-16"/>
         </div>
     );
