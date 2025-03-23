@@ -7,6 +7,7 @@ type GridProps = {
   cols?: number;
   className?: string;
   children?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export const Grid = ({
@@ -16,6 +17,7 @@ export const Grid = ({
                        cols = 12,
                        className = '',
                        children,
+                       onClick,
                      }: GridProps) => {
   const correctedSpan = (() => {
     const newSpan = span;
@@ -61,7 +63,7 @@ export const Grid = ({
   })();
 
   return (
-    <div className={cn(containerClassName, className)}>
+    <div className={cn(containerClassName, className)} onClick={onClick}>
       {children}
     </div>
   );

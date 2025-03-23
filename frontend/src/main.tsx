@@ -1,17 +1,19 @@
-import {createRoot} from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import './index.css';
-import './fonts.css'
-import {BrowserRouter, Route, Routes} from 'react-router';
-import {Home} from '@/features/home/Home.tsx';
-import {Login} from "@/features/login/Login.tsx";
-import {Profile} from "@/features/profile/Profile.tsx";
+import './fonts.css';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { Home } from '@/features/home/Home.tsx';
+import { Login } from '@/features/login/Login.tsx';
+import { Profile } from '@/features/profile/Profile.tsx';
+import { Picture } from '@/features/pictures/Picture.tsx';
 
 createRoot(document.getElementById('root')!).render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<Login/>} />
-            <Route path="/profile" element={<Profile/>} />
-        </Routes>
-    </BrowserRouter>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/picture" element={<Picture />} />
+    </Routes>
+  </BrowserRouter>,
 );
