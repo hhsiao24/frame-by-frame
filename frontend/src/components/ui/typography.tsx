@@ -14,7 +14,7 @@ export const H2 = ({ children, className }: Props) => {
 
 export const H3 = ({ children, className }: Props) => {
   return (
-    <h1 className={`font-title text-base ${className}`}>{children}</h1>
+    <h1 className={`font-title text-xl ${className}`}>{children}</h1>
   );
 };
 
