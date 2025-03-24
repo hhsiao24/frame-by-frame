@@ -8,7 +8,7 @@ type OptionCardProps = {
 
 export const OptionCard = ({ title, img }: OptionCardProps) => {
   return (
-    <Card className="cursor-pointer">
+    <Card className="cursor-pointer transition-all hover:!drop-shadow-md">
       <CardContent className="flex flex-col items-center gap-4">
         <H3>{title}</H3>
         <img src={img} alt={`Image for ${title}`} className="max-h-48" />

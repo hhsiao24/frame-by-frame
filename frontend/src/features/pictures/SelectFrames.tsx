@@ -25,10 +25,14 @@ export const SelectFrames = ({ size: selectedSize, setSize: setSelectedSize, nex
         {sizes.map((size, i) => (
           <Grid item span={{ sm: 12, md: 6, lg: 4 }} key={i} className="flex flex-col items-center cursor-pointer gap-4"
                 onClick={() => setSelectedSize(size.label)}>
-            <Button className="w-11/12" variant={selectedSize == size.label ? 'default' : 'outline'}>
+            <Button className="w-11/12" variant={selectedSize === size.label ? 'default' : 'outline'}>
               {size.label}
             </Button>
-            <img src={size.img} alt={`Sample image for photoshoot ${size.label} frames`} />
+            <div
+              className={`${selectedSize === size.label && 'bg-neutral-50 !drop-shadow-md'} rounded-xl h-full transition-all`}>
+              <img src={size.img} alt={`Sample image for photoshoot ${size.label} frames`}
+                   className={selectedSize !== size.label ? 'opacity-70' : undefined} />
+            </div>
           </Grid>
         ))}
       </Grid>
