@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { googleLogout } from '@react-oauth/google';
+import { Skeleton } from '@/components/ui/skeleton.tsx';
 
 export const Profile = () => {
   const nav = useNavigate();
@@ -53,7 +54,7 @@ export const Profile = () => {
             <IconLogout />
           </Button>
         </Grid>
-        <H1>{name}!</H1>
+        {name ? <H1>{name}!</H1> : <Skeleton className="h-16 w-[400px] max-w-full" />}
       </div>
       <Grid container className="gap-8">
         <Grid item span={{ sm: 12, md: 6, lg: 4 }}>

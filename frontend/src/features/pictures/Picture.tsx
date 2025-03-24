@@ -33,7 +33,7 @@ export const Picture = () => {
     <Grid container className="w-screen p-16 gap-4 md:gap-16 ">
       <Grid item span={{ sm: 12, md: 4 }} className="flex flex-col gap-2 items-start">
         <Link to="/profile">
-          <Button variant="ghost"><IconArrowLeft />Back</Button>
+          <Button variant="ghost"><IconArrowLeft />Exit</Button>
         </Link>
         <div className="flex flex-col items-start p-8 gap-4 bg-neutral-50 rounded-xl drop-shadow-xl">
           <H3 className="font-bold">How Does This Work?</H3>

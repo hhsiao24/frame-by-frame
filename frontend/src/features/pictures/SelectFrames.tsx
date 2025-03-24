@@ -28,7 +28,9 @@ export const SelectFrames = ({ size: selectedSize, setSize: setSelectedSize, nex
             <Button className="w-11/12" variant={selectedSize == size.label ? 'default' : 'outline'}>
               {size.label}
             </Button>
-            <img src={size.img} alt={`Sample image for photoshoot ${size.label} frames`} />
+            <div className={`${selectedSize == size.label && 'bg-neutral-50 !drop-shadow-md'} rounded-xl h-full transition-all`}>
+              <img src={size.img} alt={`Sample image for photoshoot ${size.label} frames`} />
+            </div>
           </Grid>
         ))}
       </Grid>
